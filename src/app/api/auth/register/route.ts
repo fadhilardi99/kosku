@@ -48,7 +48,7 @@ export async function POST(request: NextRequest) {
     });
 
     // Hapus password dari response
-    const { password: _, ...userResponse } = user;
+    const { password: _password, ...userResponse } = user; // eslint-disable-line @typescript-eslint/no-unused-vars
 
     return NextResponse.json(
       {
