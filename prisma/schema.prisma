@@ -26,6 +26,7 @@ model User {
 
   accounts Account[]
   sessions Session[]
+  favorites Favorite[]
 }
 
 model Account {
@@ -84,5 +85,19 @@ model Kos {
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
 
+  favorites Favorite[]
+
   @@map("kos")
+}
+
+model Favorite {
+  id        String   @id @default(cuid())
+  userId    String
+  kosId     String
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  kos  Kos  @relation(fields: [kosId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, kosId])
 }

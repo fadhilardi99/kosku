@@ -11,10 +11,14 @@ import {
   EnvelopeIcon,
   ArrowRightIcon,
   CheckCircleIcon,
-  HeartIcon,
 } from "@heroicons/react/24/solid";
-import { HeartIcon as HeartOutlineIcon } from "@heroicons/react/24/outline";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import { useFavoriteKos } from "@/lib/useFavoriteKos";
+import dynamic from "next/dynamic";
+const FavoriteButton = dynamic(() => import("@/components/ui/FavoriteButton"), {
+  ssr: false,
+});
 
 type Kos = {
   id: string;
@@ -86,63 +90,12 @@ const features = [
   },
 ];
 
-// Custom hook for managing favorites in localStorage
-function useFavorites() {
-  const [favorites, setFavorites] = useState<string[]>(() => {
-    // Inisialisasi dari localStorage hanya sekali saat mount
-    if (typeof window !== "undefined") {
-      const stored = localStorage.getItem("favorites");
-      return stored ? JSON.parse(stored) : [];
-    }
-    return [];
-  });
-
-  useEffect(() => {
-    localStorage.setItem("favorites", JSON.stringify(favorites));
-  }, [favorites]);
-
-  const addFavorite = (id: string) => {
-    setFavorites((prev) => (prev.includes(id) ? prev : [...prev, id]));
-  };
-  const removeFavorite = (id: string) => {
-    setFavorites((prev) => prev.filter((fid) => fid !== id));
-  };
-  const isFavorite = (id: string) => favorites.includes(id);
-
-  return { favorites, addFavorite, removeFavorite, isFavorite };
-}
-
 export default function Dashboard() {
   const [populerKos, setPopulerKos] = useState<Kos[]>([]);
   const [error, setError] = useState<string | null>(null);
-  const { favorites, addFavorite, removeFavorite, isFavorite } = useFavorites();
-  const [favoriteKos, setFavoriteKos] = useState<Kos[]>([]);
-  const [favLoading, setFavLoading] = useState(false);
-  const [favError, setFavError] = useState<string | null>(null);
-
-  useEffect(() => {
-    async function fetchFavoriteKos() {
-      setFavLoading(true);
-      setFavError(null);
-      try {
-        if (favorites.length === 0) {
-          setFavoriteKos([]);
-          setFavLoading(false);
-          return;
-        }
-        const res = await fetch("/api/kos");
-        if (!res.ok) throw new Error("Gagal memuat data kos favorit.");
-        const allKos: Kos[] = await res.json();
-        setFavoriteKos(allKos.filter((kos) => favorites.includes(kos.id)));
-      } catch {
-        setFavError("Gagal memuat data kos favorit.");
-        setFavoriteKos([]);
-      } finally {
-        setFavLoading(false);
-      }
-    }
-    fetchFavoriteKos();
-  }, [favorites]);
+  const { addFavorite, removeFavorite, isFavorite } = useFavoriteKos();
+  const [searchValue, setSearchValue] = useState("");
+  const router = useRouter();
 
   useEffect(() => {
     async function fetchPopulerKos() {
@@ -192,7 +145,17 @@ export default function Dashboard() {
 
           {/* Search Bar */}
           <div className="max-w-2xl mx-auto mb-12">
-            <div className="relative">
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                if (searchValue.trim()) {
+                  router.push(`/kos?search=${encodeURIComponent(searchValue)}`);
+                } else {
+                  router.push("/kos");
+                }
+              }}
+              className="relative"
+            >
               <div className="absolute inset-0 bg-gradient-to-r from-[#4E342E] to-[#6D4C41] rounded-2xl blur opacity-20"></div>
               <div className="relative bg-white rounded-2xl p-2 shadow-xl border border-amber-100">
                 <div className="flex items-center">
@@ -200,14 +163,19 @@ export default function Dashboard() {
                   <input
                     type="text"
                     placeholder="Cari berdasarkan lokasi..."
+                    value={searchValue}
+                    onChange={(e) => setSearchValue(e.target.value)}
                     className="flex-1 px-4 py-4 text-[#4E342E] placeholder-[#4E342E] placeholder-opacity-50 focus:outline-none"
                   />
-                  <button className="px-8 py-4 bg-gradient-to-r from-[#4E342E] to-[#6D4C41] text-white font-bold rounded-xl hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                  <button
+                    type="submit"
+                    className="px-8 py-4 bg-gradient-to-r from-[#4E342E] to-[#6D4C41] text-white font-bold rounded-xl hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                  >
                     Cari Kos
                   </button>
                 </div>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </section>
@@ -279,30 +247,14 @@ export default function Dashboard() {
                       ★ {kos.rating.toFixed(1)}
                     </span>
                     {/* Favorite button */}
-                    <button
-                      type="button"
-                      aria-label={
+                    <FavoriteButton
+                      isFavorite={isFavorite(kos.id)}
+                      onClick={() =>
                         isFavorite(kos.id)
-                          ? "Hapus dari Favorit"
-                          : "Tambah ke Favorit"
+                          ? removeFavorite(kos.id)
+                          : addFavorite(kos.id)
                       }
-                      className="absolute bottom-3 right-3 bg-white/80 rounded-full p-2 shadow hover:bg-white"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        if (isFavorite(kos.id)) {
-                          removeFavorite(kos.id);
-                        } else {
-                          addFavorite(kos.id);
-                        }
-                      }}
-                    >
-                      {isFavorite(kos.id) ? (
-                        <HeartIcon className="w-6 h-6 text-red-500" />
-                      ) : (
-                        <HeartOutlineIcon className="w-6 h-6 text-[#4E342E]" />
-                      )}
-                    </button>
+                    />
                   </div>
                   <div className="p-5">
                     <h2 className="text-xl font-bold text-[#4E342E] mb-1 truncate">
@@ -337,99 +289,6 @@ export default function Dashboard() {
           </div>
         </section>
       )}
-
-      {/* Kos Favorit Section */}
-      <section className="max-w-6xl mx-auto px-4 mb-20 mt-10">
-        <h2 className="text-3xl md:text-4xl font-bold text-[#4E342E] mb-8 text-center">
-          Kos Favorit Anda
-        </h2>
-        {favLoading ? (
-          <div className="text-center text-[#4E342E] opacity-70">
-            Memuat data kos favorit...
-          </div>
-        ) : favError ? (
-          <div className="text-center text-red-600 font-semibold">
-            {favError}
-          </div>
-        ) : favoriteKos.length === 0 ? (
-          <div className="text-center text-[#4E342E] opacity-70">
-            Belum ada kos favorit. Tambahkan kos ke favorit dengan klik ikon
-            hati!
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-            {favoriteKos.map((kos) => {
-              const images = JSON.parse(kos.images);
-              return (
-                <Link
-                  key={kos.id}
-                  href={`/kos/${kos.slug}`}
-                  className="block bg-white rounded-2xl shadow-lg border border-amber-100 hover:shadow-xl transition-all duration-300 group relative"
-                >
-                  <div className="relative w-full h-48 rounded-t-2xl overflow-hidden">
-                    <Image
-                      src={images[0]}
-                      alt={kos.name}
-                      fill
-                      className="object-cover w-full h-full group-hover:scale-105 transition-all duration-300"
-                    />
-                    <span className="absolute top-3 left-3 bg-[#4E342E] text-white text-xs px-3 py-1 rounded-full font-semibold">
-                      {kos.type}
-                    </span>
-                    <span className="absolute top-3 right-3 bg-amber-500 text-white text-xs px-3 py-1 rounded-full font-bold shadow-lg">
-                      ★ {kos.rating.toFixed(1)}
-                    </span>
-                    {/* Favorite button */}
-                    <button
-                      type="button"
-                      aria-label={
-                        isFavorite(kos.id)
-                          ? "Hapus dari Favorit"
-                          : "Tambah ke Favorit"
-                      }
-                      className="absolute bottom-3 right-3 bg-white/80 rounded-full p-2 shadow hover:bg-white"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        if (isFavorite(kos.id)) {
-                          removeFavorite(kos.id);
-                        } else {
-                          addFavorite(kos.id);
-                        }
-                      }}
-                    >
-                      {isFavorite(kos.id) ? (
-                        <HeartIcon className="w-6 h-6 text-red-500" />
-                      ) : (
-                        <HeartOutlineIcon className="w-6 h-6 text-[#4E342E]" />
-                      )}
-                    </button>
-                  </div>
-                  <div className="p-5">
-                    <h2 className="text-xl font-bold text-[#4E342E] mb-1 truncate">
-                      {kos.name}
-                    </h2>
-                    <div className="text-[#4E342E] opacity-70 text-sm mb-2 truncate">
-                      {kos.address}
-                    </div>
-                    <div className="flex items-center gap-2 mb-2">
-                      <span className="text-amber-600 font-semibold">
-                        {kos.rating.toFixed(1)}
-                      </span>
-                      <span className="text-[#4E342E] opacity-60 text-xs">
-                        ({kos.reviews} ulasan)
-                      </span>
-                    </div>
-                    <div className="text-lg font-bold text-[#4E342E]">
-                      Rp {Number(kos.price).toLocaleString("id-ID")}
-                    </div>
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
-        )}
-      </section>
 
       {/* Testimonials Section */}
       <section className="max-w-6xl mx-auto px-4 mb-20">

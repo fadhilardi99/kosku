@@ -15,12 +15,15 @@ import {
   LogOut,
 } from "lucide-react";
 import { useRouter } from "next/navigation";
+import MobileFavoriteModal from "@/components/ui/MobileFavoriteModal";
+import FavoriteDropdown from "@/components/ui/FavoriteDropdown";
 
 export default function Navbar() {
   const { data: session } = useSession();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [userDropdownOpen, setUserDropdownOpen] = useState(false);
+  const [showFavoriteDropdown, setShowFavoriteDropdown] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
@@ -46,6 +49,18 @@ export default function Navbar() {
       document.removeEventListener("click", handleClickOutside);
     };
   }, [userDropdownOpen]);
+
+  useEffect(() => {
+    if (!showFavoriteDropdown) return;
+    function handleClickOutside(e: MouseEvent) {
+      const dropdown = document.querySelector("[data-favorite-dropdown]");
+      if (dropdown && !dropdown.contains(e.target as Node)) {
+        setShowFavoriteDropdown(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [showFavoriteDropdown]);
 
   const navItems = [
     { name: "Beranda", path: "/", icon: Home },
@@ -92,14 +107,27 @@ export default function Navbar() {
             ))}
 
             <div className="ml-4 flex items-center space-x-3">
-              <Button
-                variant="ghost"
-                size="sm"
-                className="p-2 rounded-full transition-all duration-300 text-white hover:text-[#4E342E] hover:bg-white"
-              >
-                <Heart className="h-5 w-5" />
-              </Button>
-
+              {/* Tombol Favorite di Desktop */}
+              <div className="relative hidden md:block">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="p-2 rounded-full transition-all duration-300 text-white hover:text-[#4E342E] hover:bg-white"
+                  onClick={() => {
+                    setUserDropdownOpen(false);
+                    setIsOpen(false);
+                    setShowFavoriteDropdown((v) => !v);
+                  }}
+                  aria-label="Lihat kos favorit"
+                >
+                  <Heart className="h-5 w-5" />
+                </Button>
+                {showFavoriteDropdown && (
+                  <FavoriteDropdown
+                    onClose={() => setShowFavoriteDropdown(false)}
+                  />
+                )}
+              </div>
               {session?.user ? (
                 <div className="relative">
                   <Button
@@ -188,8 +216,43 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-[#4E342E] border-b border-[#3E2723]/30 shadow-xl">
+          <div className="md:hidden absolute top-full left-0 right-0 bg-[#4E342E] border-b border-[#3E2723]/30 shadow-xl z-50">
             <div className="px-4 py-6 space-y-2">
+              {/* Tombol Favorite di Mobile */}
+              <button
+                className="flex items-center space-x-3 px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 text-white hover:text-[#4E342E] hover:bg-white w-full md:hidden"
+                onClick={() => setShowFavoriteDropdown((v) => !v)}
+                aria-label="Lihat kos favorit"
+              >
+                <Heart className="h-5 w-5" />
+                <span>Favorit Saya</span>
+              </button>
+              {showFavoriteDropdown && (
+                <MobileFavoriteModal
+                  onClose={() => setShowFavoriteDropdown(false)}
+                />
+              )}
+              {/* Tombol Favorite di Desktop */}
+              <div className="relative hidden md:block">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="p-2 rounded-full transition-all duration-300 text-white hover:text-[#4E342E] hover:bg-white"
+                  onClick={() => {
+                    setUserDropdownOpen(false);
+                    setIsOpen(false);
+                    setShowFavoriteDropdown((v) => !v);
+                  }}
+                  aria-label="Lihat kos favorit"
+                >
+                  <Heart className="h-5 w-5" />
+                </Button>
+                {showFavoriteDropdown && (
+                  <FavoriteDropdown
+                    onClose={() => setShowFavoriteDropdown(false)}
+                  />
+                )}
+              </div>
               {navItems.map((item) => (
                 <Link
                   key={item.path}
@@ -219,13 +282,6 @@ export default function Navbar() {
                     </div>
                   </div>
                   <div className="pt-3 space-y-2">
-                    <Button
-                      variant="outline"
-                      className="w-full justify-start text-white border-[#8D6E63] hover:bg-white hover:text-[#4E342E] hover:border-white"
-                    >
-                      <Heart className="h-4 w-4 mr-2" />
-                      Favorit Saya
-                    </Button>
                     <Button className="w-full bg-white text-[#4E342E] font-semibold shadow-lg hover:bg-[#8D6E63] hover:text-white">
                       Cari Kos
                     </Button>

@@ -8,6 +8,14 @@ import {
   Phone,
   MessageCircle,
   MapPin,
+  ShowerHead,
+  Car,
+  Utensils,
+  Shield,
+  Clock,
+  AirVent,
+  WashingMachine,
+  Tv,
 } from "lucide-react";
 
 export type FasilitasItem = string | { icon?: string; label: string };
@@ -20,6 +28,14 @@ const iconMap: Record<string, React.ElementType> = {
   Phone,
   MessageCircle,
   MapPin,
+  ShowerHead,
+  Car,
+  Utensils,
+  Shield,
+  Clock,
+  AirVent,
+  WashingMachine,
+  Tv,
 };
 
 interface FasilitasListProps {

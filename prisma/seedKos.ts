@@ -3,15 +3,20 @@ import fs from "fs";
 
 const prisma = new PrismaClient();
 
-const kosData = JSON.parse(
-  fs.readFileSync("d:/Chrome_Downloads/kos_data_unique.json", "utf-8")
-);
+const kosData = JSON.parse(fs.readFileSync("kos_data_json.json", "utf-8"));
 
 async function main() {
+  await prisma.kos.deleteMany();
   for (const kos of kosData) {
     await prisma.kos.create({
       data: {
         name: kos.name,
+        slug: kos.name
+          .toLowerCase()
+          .replace(/[^a-z0-9\s-]/g, "")
+          .replace(/\s+/g, "-")
+          .replace(/-+/g, "-")
+          .replace(/^-+|-+$/g, ""),
         address: kos.address,
         price: BigInt(kos.price),
         originalPrice: kos.originalPrice ? BigInt(kos.originalPrice) : null,

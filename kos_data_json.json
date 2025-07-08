@@ -1,0 +1,705 @@
+[
+  {
+    "name": "Kos Putra Tulip",
+    "address": "Jl. Tulip Raya No. 140, Bogor",
+    "price": 1200000,
+    "originalPrice": 1400000,
+    "rating": 4.0,
+    "reviews": 28,
+    "type": "Kos Putra",
+    "images": [
+      "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1483058712412-4245e9b90334?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=400&h=300&fit=crop"
+    ],
+    "description": "Kos Putra Tulip adalah hunian nyaman khusus pria yang berlokasi strategis di Bogor. Dekat dengan berbagai fasilitas umum seperti mall, restoran, dan transportasi publik. Lingkungan aman dengan keamanan 24 jam.",
+    "fasilitas": [
+      { "icon": "Wifi", "label": "WiFi Gratis" },
+      { "icon": "ShowerHead", "label": "Kamar Mandi Dalam" },
+      { "icon": "Car", "label": "Parkir Motor" },
+      { "icon": "Utensils", "label": "Dapur Bersama" },
+      { "icon": "Shield", "label": "Keamanan 24 Jam" },
+      { "icon": "Clock", "label": "Jam Malam Fleksibel" }
+    ],
+    "rules": [
+      "Khusus untuk pria",
+      "Tidak boleh membawa tamu lawan jenis",
+      "Jam malam maksimal 22.00 WIB",
+      "Dilarang merokok di dalam kamar",
+      "Wajib menjaga kebersihan bersama"
+    ],
+    "location": {
+      "address": "Jl. Tulip Raya No. 140, Bogor",
+      "map": "Google Maps akan ditampilkan di sini"
+    },
+    "phone": "+62 812-2793-2813",
+    "whatsapp": "+62 812-2793-2813"
+  },
+  {
+    "name": "Kos Putri Mawar",
+    "address": "Jl. Mawar Indah No. 25, Kemang, Jakarta Selatan",
+    "price": 1500000,
+    "originalPrice": 1700000,
+    "rating": 4.5,
+    "reviews": 35,
+    "type": "Kos Putri",
+    "images": [
+      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1554995207-c18c203602cb?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=400&h=300&fit=crop"
+    ],
+    "description": "Kos Putri Mawar adalah hunian nyaman khusus wanita yang berlokasi strategis di Kemang, Jakarta Selatan. Dekat dengan berbagai fasilitas umum seperti mall, restoran, dan transportasi publik. Lingkungan aman dengan keamanan 24 jam.",
+    "fasilitas": [
+      { "icon": "Wifi", "label": "WiFi Gratis" },
+      { "icon": "ShowerHead", "label": "Kamar Mandi Dalam" },
+      { "icon": "Car", "label": "Parkir Motor" },
+      { "icon": "Utensils", "label": "Dapur Bersama" },
+      { "icon": "Shield", "label": "Keamanan 24 Jam" },
+      { "icon": "AirVent", "label": "AC" }
+    ],
+    "rules": [
+      "Khusus untuk wanita",
+      "Tidak boleh membawa tamu lawan jenis",
+      "Jam malam maksimal 23.00 WIB",
+      "Dilarang merokok di dalam kamar",
+      "Wajib menjaga kebersihan bersama"
+    ],
+    "location": {
+      "address": "Jl. Mawar Indah No. 25, Kemang, Jakarta Selatan",
+      "map": "Google Maps akan ditampilkan di sini"
+    },
+    "phone": "+62 813-4567-8901",
+    "whatsapp": "+62 813-4567-8901"
+  },
+  {
+    "name": "Kos Melati Residence",
+    "address": "Jl. Melati Sari No. 88, Depok",
+    "price": 900000,
+    "originalPrice": 1100000,
+    "rating": 4.2,
+    "reviews": 42,
+    "type": "Kos Campur",
+    "images": [
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1582582621959-48d27397dc69?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=400&h=300&fit=crop"
+    ],
+    "description": "Kos Melati Residence menawarkan hunian yang nyaman dan terjangkau di Depok. Cocok untuk mahasiswa dan pekerja muda dengan fasilitas lengkap dan lingkungan yang tenang.",
+    "fasilitas": [
+      { "icon": "Wifi", "label": "WiFi Gratis" },
+      { "icon": "ShowerHead", "label": "Kamar Mandi Luar" },
+      { "icon": "Car", "label": "Parkir Motor" },
+      { "icon": "Utensils", "label": "Dapur Bersama" },
+      { "icon": "Shield", "label": "Keamanan 24 Jam" },
+      { "icon": "WashingMachine", "label": "Laundry" }
+    ],
+    "rules": [
+      "Untuk pria dan wanita (lantai terpisah)",
+      "Tamu maksimal sampai jam 21.00 WIB",
+      "Jam malam maksimal 23.00 WIB",
+      "Dilarang merokok di dalam kamar",
+      "Wajib menjaga kebersihan bersama"
+    ],
+    "location": {
+      "address": "Jl. Melati Sari No. 88, Depok",
+      "map": "Google Maps akan ditampilkan di sini"
+    },
+    "phone": "+62 821-9876-5432",
+    "whatsapp": "+62 821-9876-5432"
+  },
+  {
+    "name": "Kos Putra Anggrek",
+    "address": "Jl. Anggrek Putih No. 15, Tangerang",
+    "price": 1100000,
+    "originalPrice": 1300000,
+    "rating": 3.8,
+    "reviews": 19,
+    "type": "Kos Putra",
+    "images": [
+      "https://images.unsplash.com/photo-1493663284031-b7e3aaa4b624?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1571624436279-b272aff752b5?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1571624058968-3e4e3b0d5d9e?w=400&h=300&fit=crop"
+    ],
+    "description": "Kos Putra Anggrek menyediakan hunian khusus pria dengan suasana yang nyaman dan tenang di Tangerang. Dekat dengan pusat perbelanjaan dan akses transportasi yang mudah.",
+    "fasilitas": [
+      { "icon": "Wifi", "label": "WiFi Gratis" },
+      { "icon": "ShowerHead", "label": "Kamar Mandi Dalam" },
+      { "icon": "Car", "label": "Parkir Motor" },
+      { "icon": "Utensils", "label": "Dapur Bersama" },
+      { "icon": "Shield", "label": "Keamanan 24 Jam" },
+      { "icon": "Tv", "label": "TV Bersama" }
+    ],
+    "rules": [
+      "Khusus untuk pria",
+      "Tidak boleh membawa tamu lawan jenis",
+      "Jam malam maksimal 22.30 WIB",
+      "Dilarang merokok di dalam kamar",
+      "Wajib menjaga kebersihan bersama"
+    ],
+    "location": {
+      "address": "Jl. Anggrek Putih No. 15, Tangerang",
+      "map": "Google Maps akan ditampilkan di sini"
+    },
+    "phone": "+62 812-5555-7777",
+    "whatsapp": "+62 812-5555-7777"
+  },
+  {
+    "name": "Kos Putri Dahlia",
+    "address": "Jl. Dahlia Merah No. 32, Bekasi",
+    "price": 1300000,
+    "originalPrice": 1500000,
+    "rating": 4.3,
+    "reviews": 31,
+    "type": "Kos Putri",
+    "images": [
+      "https://images.unsplash.com/photo-1560185007-5f0bb1866cab?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1602872030219-ad2b9a54315c?w=400&h=300&fit=crop"
+    ],
+    "description": "Kos Putri Dahlia adalah hunian eksklusif untuk wanita dengan fasilitas modern dan keamanan terjamin. Lokasi strategis di Bekasi dengan akses mudah ke berbagai tempat.",
+    "fasilitas": [
+      { "icon": "Wifi", "label": "WiFi Gratis" },
+      { "icon": "ShowerHead", "label": "Kamar Mandi Dalam" },
+      { "icon": "Car", "label": "Parkir Motor" },
+      { "icon": "Utensils", "label": "Dapur Bersama" },
+      { "icon": "Shield", "label": "Keamanan 24 Jam" },
+      { "icon": "AirVent", "label": "AC" }
+    ],
+    "rules": [
+      "Khusus untuk wanita",
+      "Tidak boleh membawa tamu lawan jenis",
+      "Jam malam maksimal 23.00 WIB",
+      "Dilarang merokok di dalam kamar",
+      "Wajib menjaga kebersihan bersama"
+    ],
+    "location": {
+      "address": "Jl. Dahlia Merah No. 32, Bekasi",
+      "map": "Google Maps akan ditampilkan di sini"
+    },
+    "phone": "+62 813-8888-9999",
+    "whatsapp": "+62 813-8888-9999"
+  },
+  {
+    "name": "Kos Kenanga House",
+    "address": "Jl. Kenanga Biru No. 67, Bandung",
+    "price": 1000000,
+    "originalPrice": 1200000,
+    "rating": 4.1,
+    "reviews": 26,
+    "type": "Kos Campur",
+    "images": [
+      "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=300&fit=crop"
+    ],
+    "description": "Kos Kenanga House menawarkan hunian nyaman di Bandung dengan udara yang sejuk dan fasilitas lengkap. Cocok untuk mahasiswa dan pekerja muda.",
+    "fasilitas": [
+      { "icon": "Wifi", "label": "WiFi Gratis" },
+      { "icon": "ShowerHead", "label": "Kamar Mandi Luar" },
+      { "icon": "Car", "label": "Parkir Motor" },
+      { "icon": "Utensils", "label": "Dapur Bersama" },
+      { "icon": "Shield", "label": "Keamanan 24 Jam" },
+      { "icon": "WashingMachine", "label": "Laundry" }
+    ],
+    "rules": [
+      "Untuk pria dan wanita (lantai terpisah)",
+      "Tamu maksimal sampai jam 21.00 WIB",
+      "Jam malam maksimal 23.00 WIB",
+      "Dilarang merokok di dalam kamar",
+      "Wajib menjaga kebersihan bersama"
+    ],
+    "location": {
+      "address": "Jl. Kenanga Biru No. 67, Bandung",
+      "map": "Google Maps akan ditampilkan di sini"
+    },
+    "phone": "+62 822-3333-4444",
+    "whatsapp": "+62 822-3333-4444"
+  },
+  {
+    "name": "Kos Putra Flamboyan",
+    "address": "Jl. Flamboyan Raya No. 91, Semarang",
+    "price": 850000,
+    "originalPrice": 1000000,
+    "rating": 3.9,
+    "reviews": 22,
+    "type": "Kos Putra",
+    "images": [
+      "https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop"
+    ],
+    "description": "Kos Putra Flamboyan menyediakan hunian terjangkau khusus pria di Semarang. Lingkungan yang tenang dan dekat dengan kampus serta pusat kota.",
+    "fasilitas": [
+      { "icon": "Wifi", "label": "WiFi Gratis" },
+      { "icon": "ShowerHead", "label": "Kamar Mandi Luar" },
+      { "icon": "Car", "label": "Parkir Motor" },
+      { "icon": "Utensils", "label": "Dapur Bersama" },
+      { "icon": "Shield", "label": "Keamanan 24 Jam" },
+      { "icon": "Tv", "label": "TV Bersama" }
+    ],
+    "rules": [
+      "Khusus untuk pria",
+      "Tidak boleh membawa tamu lawan jenis",
+      "Jam malam maksimal 22.00 WIB",
+      "Dilarang merokok di dalam kamar",
+      "Wajib menjaga kebersihan bersama"
+    ],
+    "location": {
+      "address": "Jl. Flamboyan Raya No. 91, Semarang",
+      "map": "Google Maps akan ditampilkan di sini"
+    },
+    "phone": "+62 811-6666-7777",
+    "whatsapp": "+62 811-6666-7777"
+  },
+  {
+    "name": "Kos Putri Lavender",
+    "address": "Jl. Lavender Ungu No. 44, Yogyakarta",
+    "price": 1400000,
+    "originalPrice": 1600000,
+    "rating": 4.6,
+    "reviews": 38,
+    "type": "Kos Putri",
+    "images": [
+      "https://images.unsplash.com/photo-1631049552240-59c37f38802b?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1574362848149-11496d93a7c7?w=400&h=300&fit=crop"
+    ],
+    "description": "Kos Putri Lavender adalah hunian premium untuk wanita di Yogyakarta. Dekat dengan kampus dan pusat budaya, dengan fasilitas modern dan keamanan terjamin.",
+    "fasilitas": [
+      { "icon": "Wifi", "label": "WiFi Gratis" },
+      { "icon": "ShowerHead", "label": "Kamar Mandi Dalam" },
+      { "icon": "Car", "label": "Parkir Motor" },
+      { "icon": "Utensils", "label": "Dapur Bersama" },
+      { "icon": "Shield", "label": "Keamanan 24 Jam" },
+      { "icon": "AirVent", "label": "AC" }
+    ],
+    "rules": [
+      "Khusus untuk wanita",
+      "Tidak boleh membawa tamu lawan jenis",
+      "Jam malam maksimal 23.30 WIB",
+      "Dilarang merokok di dalam kamar",
+      "Wajib menjaga kebersihan bersama"
+    ],
+    "location": {
+      "address": "Jl. Lavender Ungu No. 44, Yogyakarta",
+      "map": "Google Maps akan ditampilkan di sini"
+    },
+    "phone": "+62 814-7777-8888",
+    "whatsapp": "+62 814-7777-8888"
+  },
+  {
+    "name": "Kos Sakura Residence",
+    "address": "Jl. Sakura Pink No. 123, Surabaya",
+    "price": 1250000,
+    "originalPrice": 1450000,
+    "rating": 4.4,
+    "reviews": 29,
+    "type": "Kos Campur",
+    "images": [
+      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=400&h=300&fit=crop"
+    ],
+    "description": "Kos Sakura Residence menawarkan hunian modern di Surabaya dengan konsep minimalis. Fasilitas lengkap dan lingkungan yang bersih untuk kenyamanan penghuni.",
+    "fasilitas": [
+      { "icon": "Wifi", "label": "WiFi Gratis" },
+      { "icon": "ShowerHead", "label": "Kamar Mandi Dalam" },
+      { "icon": "Car", "label": "Parkir Motor" },
+      { "icon": "Utensils", "label": "Dapur Bersama" },
+      { "icon": "Shield", "label": "Keamanan 24 Jam" },
+      { "icon": "WashingMachine", "label": "Laundry" }
+    ],
+    "rules": [
+      "Untuk pria dan wanita (lantai terpisah)",
+      "Tamu maksimal sampai jam 21.30 WIB",
+      "Jam malam maksimal 23.00 WIB",
+      "Dilarang merokok di dalam kamar",
+      "Wajib menjaga kebersihan bersama"
+    ],
+    "location": {
+      "address": "Jl. Sakura Pink No. 123, Surabaya",
+      "map": "Google Maps akan ditampilkan di sini"
+    },
+    "phone": "+62 815-9999-1111",
+    "whatsapp": "+62 815-9999-1111"
+  },
+  {
+    "name": "Kos Putra Teratai",
+    "address": "Jl. Teratai Hijau No. 56, Malang",
+    "price": 950000,
+    "originalPrice": 1150000,
+    "rating": 4.0,
+    "reviews": 24,
+    "type": "Kos Putra",
+    "images": [
+      "https://images.unsplash.com/photo-1560185007-5f0bb1866cab?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1493663284031-b7e3aaa4b624?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1571624436279-b272aff752b5?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=400&h=300&fit=crop"
+    ],
+    "description": "Kos Putra Teratai adalah hunian nyaman khusus pria di Malang dengan udara yang sejuk dan suasana yang tenang. Cocok untuk mahasiswa dan pekerja muda.",
+    "fasilitas": [
+      { "icon": "Wifi", "label": "WiFi Gratis" },
+      { "icon": "ShowerHead", "label": "Kamar Mandi Luar" },
+      { "icon": "Car", "label": "Parkir Motor" },
+      { "icon": "Utensils", "label": "Dapur Bersama" },
+      { "icon": "Shield", "label": "Keamanan 24 Jam" },
+      { "icon": "Tv", "label": "TV Bersama" }
+    ],
+    "rules": [
+      "Khusus untuk pria",
+      "Tidak boleh membawa tamu lawan jenis",
+      "Jam malam maksimal 22.00 WIB",
+      "Dilarang merokok di dalam kamar",
+      "Wajib menjaga kebersihan bersama"
+    ],
+    "location": {
+      "address": "Jl. Teratai Hijau No. 56, Malang",
+      "map": "Google Maps akan ditampilkan di sini"
+    },
+    "phone": "+62 812-1111-2222",
+    "whatsapp": "+62 812-1111-2222"
+  },
+  {
+    "name": "Kos Putri Bougenville",
+    "address": "Jl. Bougenville No. 78, Solo",
+    "price": 1100000,
+    "originalPrice": 1300000,
+    "rating": 4.2,
+    "reviews": 33,
+    "type": "Kos Putri",
+    "images": [
+      "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1602872030219-ad2b9a54315c?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1574362848149-11496d93a7c7?w=400&h=300&fit=crop"
+    ],
+    "description": "Kos Putri Bougenville menyediakan hunian aman dan nyaman khusus wanita di Solo. Dekat dengan pusat kota dan berbagai fasilitas umum.",
+    "fasilitas": [
+      { "icon": "Wifi", "label": "WiFi Gratis" },
+      { "icon": "ShowerHead", "label": "Kamar Mandi Dalam" },
+      { "icon": "Car", "label": "Parkir Motor" },
+      { "icon": "Utensils", "label": "Dapur Bersama" },
+      { "icon": "Shield", "label": "Keamanan 24 Jam" },
+      { "icon": "AirVent", "label": "AC" }
+    ],
+    "rules": [
+      "Khusus untuk wanita",
+      "Tidak boleh membawa tamu lawan jenis",
+      "Jam malam maksimal 23.00 WIB",
+      "Dilarang merokok di dalam kamar",
+      "Wajib menjaga kebersihan bersama"
+    ],
+    "location": {
+      "address": "Jl. Bougenville No. 78, Solo",
+      "map": "Google Maps akan ditampilkan di sini"
+    },
+    "phone": "+62 813-2222-3333",
+    "whatsapp": "+62 813-2222-3333"
+  },
+  {
+    "name": "Kos Cempaka House",
+    "address": "Jl. Cempaka Putih No. 200, Medan",
+    "price": 800000,
+    "originalPrice": 950000,
+    "rating": 3.7,
+    "reviews": 18,
+    "type": "Kos Campur",
+    "images": [
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1582582621959-48d27397dc69?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?w=400&h=300&fit=crop"
+    ],
+    "description": "Kos Cempaka House menawarkan hunian terjangkau di Medan dengan fasilitas dasar yang memadai. Cocok untuk mahasiswa dengan budget terbatas.",
+    "fasilitas": [
+      { "icon": "Wifi", "label": "WiFi Gratis" },
+      { "icon": "ShowerHead", "label": "Kamar Mandi Luar" },
+      { "icon": "Car", "label": "Parkir Motor" },
+      { "icon": "Utensils", "label": "Dapur Bersama" },
+      { "icon": "Shield", "label": "Keamanan 24 Jam" },
+      { "icon": "WashingMachine", "label": "Laundry" }
+    ],
+    "rules": [
+      "Untuk pria dan wanita (lantai terpisah)",
+      "Tamu maksimal sampai jam 21.00 WIB",
+      "Jam malam maksimal 22.30 WIB",
+      "Dilarang merokok di dalam kamar",
+      "Wajib menjaga kebersihan bersama"
+    ],
+    "location": {
+      "address": "Jl. Cempaka Putih No. 200, Medan",
+      "map": "Google Maps akan ditampilkan di sini"
+    },
+    "phone": "+62 821-3333-4444",
+    "whatsapp": "+62 821-3333-4444"
+  },
+  {
+    "name": "Kos Putra Kamboja",
+    "address": "Jl. Kamboja Kuning No. 111, Palembang",
+    "price": 900000,
+    "originalPrice": 1100000,
+    "rating": 3.9,
+    "reviews": 21,
+    "type": "Kos Putra",
+    "images": [
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1571624058968-3e4e3b0d5d9e?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=400&h=300&fit=crop"
+    ],
+    "description": "Kos Putra Kamboja adalah hunian khusus pria di Palembang dengan fasilitas standar dan harga terjangkau. Lingkungan yang tenang dan dekat dengan akses transportasi.",
+    "fasilitas": [
+      { "icon": "Wifi", "label": "WiFi Gratis" },
+      { "icon": "ShowerHead", "label": "Kamar Mandi Luar" },
+      { "icon": "Car", "label": "Parkir Motor" },
+      { "icon": "Utensils", "label": "Dapur Bersama" },
+      { "icon": "Shield", "label": "Keamanan 24 Jam" },
+      { "icon": "Tv", "label": "TV Bersama" }
+    ],
+    "rules": [
+      "Khusus untuk pria",
+      "Tidak boleh membawa tamu lawan jenis",
+      "Jam malam maksimal 22.00 WIB",
+      "Dilarang merokok di dalam kamar",
+      "Wajib menjaga kebersihan bersama"
+    ],
+    "location": {
+      "address": "Jl. Kamboja Kuning No. 111, Palembang",
+      "map": "Google Maps akan ditampilkan di sini"
+    },
+    "phone": "+62 822-4444-5555",
+    "whatsapp": "+62 822-4444-5555"
+  },
+  {
+    "name": "Kos Putri Gardenia",
+    "address": "Jl. Gardenia Indah No. 45, Denpasar",
+    "price": 1600000,
+    "originalPrice": 1800000,
+    "rating": 4.7,
+    "reviews": 41,
+    "type": "Kos Putri",
+    "images": [
+      "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1631049552240-59c37f38802b?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?w=400&h=300&fit=crop"
+    ],
+    "description": "Kos Putri Gardenia adalah hunian premium khusus wanita di Denpasar dengan nuansa tropis yang asri. Dekat dengan pantai dan pusat wisata Bali.",
+    "fasilitas": [
+      { "icon": "Wifi", "label": "WiFi Gratis" },
+      { "icon": "ShowerHead", "label": "Kamar Mandi Dalam" },
+      { "icon": "Car", "label": "Parkir Motor" },
+      { "icon": "Utensils", "label": "Dapur Bersama" },
+      { "icon": "Shield", "label": "Keamanan 24 Jam" },
+      { "icon": "AirVent", "label": "AC" }
+    ],
+    "rules": [
+      "Khusus untuk wanita",
+      "Tidak boleh membawa tamu lawan jenis",
+      "Jam malam maksimal 24.00 WIB",
+      "Dilarang merokok di dalam kamar",
+      "Wajib menjaga kebersihan bersama"
+    ],
+    "location": {
+      "address": "Jl. Gardenia Indah No. 45, Denpasar",
+      "map": "Google Maps akan ditampilkan di sini"
+    },
+    "phone": "+62 811-5555-6666",
+    "whatsapp": "+62 811-5555-6666"
+  },
+  {
+    "name": "Kos Aster Residence",
+    "address": "Jl. Aster Biru No. 33, Makassar",
+    "price": 1050000,
+    "originalPrice": 1250000,
+    "rating": 4.1,
+    "reviews": 27,
+    "type": "Kos Campur",
+    "images": [
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=400&h=300&fit=crop"
+    ],
+    "description": "Kos Aster Residence menyediakan hunian modern di Makassar dengan fasilitas lengkap. Lokasi strategis dekat dengan universitas dan pusat perbelanjaan.",
+    "fasilitas": [
+      { "icon": "Wifi", "label": "WiFi Gratis" },
+      { "icon": "ShowerHead", "label": "Kamar Mandi Dalam" },
+      { "icon": "Car", "label": "Parkir Motor" },
+      { "icon": "Utensils", "label": "Dapur Bersama" },
+      { "icon": "Shield", "label": "Keamanan 24 Jam" },
+      { "icon": "WashingMachine", "label": "Laundry" }
+    ],
+    "rules": [
+      "Untuk pria dan wanita (lantai terpisah)",
+      "Tamu maksimal sampai jam 21.30 WIB",
+      "Jam malam maksimal 23.00 WIB",
+      "Dilarang merokok di dalam kamar",
+      "Wajib menjaga kebersihan bersama"
+    ],
+    "location": {
+      "address": "Jl. Aster Biru No. 33, Makassar",
+      "map": "Google Maps akan ditampilkan di sini"
+    },
+    "phone": "+62 812-6666-7777",
+    "whatsapp": "+62 812-6666-7777"
+  },
+  {
+    "name": "Kos Putra Jasmine",
+    "address": "Jl. Jasmine Putih No. 89, Balikpapan",
+    "price": 1150000,
+    "originalPrice": 1350000,
+    "rating": 4.0,
+    "reviews": 23,
+    "type": "Kos Putra",
+    "images": [
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1554995207-c18c203602cb?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=400&h=300&fit=crop"
+    ],
+    "description": "Kos Putra Jasmine adalah hunian khusus pria di Balikpapan dengan fasilitas modern dan lingkungan yang aman. Dekat dengan area industri dan perkantoran.",
+    "fasilitas": [
+      { "icon": "Wifi", "label": "WiFi Gratis" },
+      { "icon": "ShowerHead", "label": "Kamar Mandi Dalam" },
+      { "icon": "Car", "label": "Parkir Motor" },
+      { "icon": "Utensils", "label": "Dapur Bersama" },
+      { "icon": "Shield", "label": "Keamanan 24 Jam" },
+      { "icon": "Tv", "label": "TV Bersama" }
+    ],
+    "rules": [
+      "Khusus untuk pria",
+      "Tidak boleh membawa tamu lawan jenis",
+      "Jam malam maksimal 22.30 WIB",
+      "Dilarang merokok di dalam kamar",
+      "Wajib menjaga kebersihan bersama"
+    ],
+    "location": {
+      "address": "Jl. Jasmine Putih No. 89, Balikpapan",
+      "map": "Google Maps akan ditampilkan di sini"
+    },
+    "phone": "+62 813-7777-8888",
+    "whatsapp": "+62 813-7777-8888"
+  },
+  {
+    "name": "Kos Putri Peony",
+    "address": "Jl. Peony Merah No. 156, Pontianak",
+    "price": 950000,
+    "originalPrice": 1150000,
+    "rating": 4.3,
+    "reviews": 30,
+    "type": "Kos Putri",
+    "images": [
+      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1574362848149-11496d93a7c7?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=400&h=300&fit=crop"
+    ],
+    "description": "Kos Putri Peony menawarkan hunian nyaman khusus wanita di Pontianak dengan suasana yang homey dan aman. Dekat dengan pusat kota dan fasilitas umum.",
+    "fasilitas": [
+      { "icon": "Wifi", "label": "WiFi Gratis" },
+      { "icon": "ShowerHead", "label": "Kamar Mandi Dalam" },
+      { "icon": "Car", "label": "Parkir Motor" },
+      { "icon": "Utensils", "label": "Dapur Bersama" },
+      { "icon": "Shield", "label": "Keamanan 24 Jam" },
+      { "icon": "AirVent", "label": "AC" }
+    ],
+    "rules": [
+      "Khusus untuk wanita",
+      "Tidak boleh membawa tamu lawan jenis",
+      "Jam malam maksimal 23.00 WIB",
+      "Dilarang merokok di dalam kamar",
+      "Wajib menjaga kebersihan bersama"
+    ],
+    "location": {
+      "address": "Jl. Peony Merah No. 156, Pontianak",
+      "map": "Google Maps akan ditampilkan di sini"
+    },
+    "phone": "+62 814-8888-9999",
+    "whatsapp": "+62 814-8888-9999"
+  },
+  {
+    "name": "Kos Azalea House",
+    "address": "Jl. Azalea Hijau No. 77, Banjarmasin",
+    "price": 875000,
+    "originalPrice": 1000000,
+    "rating": 3.8,
+    "reviews": 25,
+    "type": "Kos Campur",
+    "images": [
+      "https://images.unsplash.com/photo-1560185007-5f0bb1866cab?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1582582621959-48d27397dc69?w=400&h=300&fit=crop"
+    ],
+    "description": "Kos Azalea House menyediakan hunian sederhana namun nyaman di Banjarmasin. Cocok untuk mahasiswa dan pekerja muda dengan budget terbatas.",
+    "fasilitas": [
+      { "icon": "Wifi", "label": "WiFi Gratis" },
+      { "icon": "ShowerHead", "label": "Kamar Mandi Luar" },
+      { "icon": "Car", "label": "Parkir Motor" },
+      { "icon": "Utensils", "label": "Dapur Bersama" },
+      { "icon": "Shield", "label": "Keamanan 24 Jam" },
+      { "icon": "WashingMachine", "label": "Laundry" }
+    ],
+    "rules": [
+      "Untuk pria dan wanita (lantai terpisah)",
+      "Tamu maksimal sampai jam 21.00 WIB",
+      "Jam malam maksimal 22.30 WIB",
+      "Dilarang merokok di dalam kamar",
+      "Wajib menjaga kebersihan bersama"
+    ],
+    "location": {
+      "address": "Jl. Azalea Hijau No. 77, Banjarmasin",
+      "map": "Google Maps akan ditampilkan di sini"
+    },
+    "phone": "+62 815-9999-0000",
+    "whatsapp": "+62 815-9999-0000"
+  },
+  {
+    "name": "Kos Putra Magnolia",
+    "address": "Jl. Magnolia Putih No. 234, Pekanbaru",
+    "price": 1000000,
+    "originalPrice": 1200000,
+    "rating": 4.2,
+    "reviews": 32,
+    "type": "Kos Putra",
+    "images": [
+      "https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=400&h=300&fit=crop"
+    ],
+    "description": "Kos Putra Magnolia adalah hunian khusus pria di Pekanbaru dengan fasilitas lengkap dan akses mudah ke berbagai tempat. Cocok untuk mahasiswa dan pekerja.",
+    "fasilitas": [
+      { "icon": "Wifi", "label": "WiFi Gratis" },
+      { "icon": "ShowerHead", "label": "Kamar Mandi Dalam" },
+      { "icon": "Car", "label": "Parkir Motor" },
+      { "icon": "Utensils", "label": "Dapur Bersama" },
+      { "icon": "Shield", "label": "Keamanan 24 Jam" },
+      { "icon": "Tv", "label": "TV Bersama" }
+    ],
+    "rules": [
+      "Khusus untuk pria",
+      "Tidak boleh membawa tamu lawan jenis",
+      "Jam malam maksimal 22.00 WIB",
+      "Dilarang merokok di dalam kamar",
+      "Wajib menjaga kebersihan bersama"
+    ],
+    "location": {
+      "address": "Jl. Magnolia Putih No. 234, Pekanbaru",
+      "map": "Google Maps akan ditampilkan di sini"
+    },
+    "phone": "+62 812-0000-1111",
+    "whatsapp": "+62 812-0000-1111"
+  }
+]

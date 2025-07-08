@@ -116,12 +116,14 @@ export default function TentangKami() {
               Cari Kos
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
-            <Link
-              href="/kontak"
+            <a
+              href="https://wa.me/6281227932813"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center px-8 py-4 border-2 border-[#4E342E] text-[#4E342E] font-bold rounded-xl hover:bg-[#4E342E] hover:text-white transition-all duration-300"
             >
               Hubungi Kami
-            </Link>
+            </a>
           </div>
         </div>
       </section>

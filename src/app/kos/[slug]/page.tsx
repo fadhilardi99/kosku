@@ -2,16 +2,10 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { PrismaClient } from "@prisma/client";
-import {
-  Star,
-  Heart,
-  Share2,
-  Phone,
-  MessageCircle,
-  MapPin,
-} from "lucide-react";
+import { Star, Share2, Phone, MessageCircle, MapPin } from "lucide-react";
 import { notFound } from "next/navigation";
 import FasilitasList from "@/components/FasilitasList";
+import KosFavoriteClientButton from "@/app/kos/[slug]/KosFavoriteClientButton";
 
 const prisma = new PrismaClient();
 
@@ -98,9 +92,7 @@ export default async function KosDetail(props: { params: { slug: string } }) {
                   </div>
                 </div>
                 <div className="flex gap-2">
-                  <button className="flex items-center gap-2 px-4 py-2 rounded-xl border-2 border-[#4E342E] text-[#4E342E] font-medium hover:bg-[#4E342E] hover:text-white transition-all duration-300">
-                    <Heart className="w-4 h-4" /> Favorit
-                  </button>
+                  <KosFavoriteClientButton kosId={kos.id} />
                   <button className="flex items-center gap-2 px-4 py-2 rounded-xl border-2 border-[#4E342E] text-[#4E342E] font-medium hover:bg-[#4E342E] hover:text-white transition-all duration-300">
                     <Share2 className="w-4 h-4" /> Bagikan
                   </button>
