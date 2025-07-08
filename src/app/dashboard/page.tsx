@@ -1,24 +1,19 @@
 "use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import {
   MagnifyingGlassIcon,
-  StarIcon,
   HomeModernIcon,
   MapPinIcon,
   PhoneIcon,
   EnvelopeIcon,
   ArrowRightIcon,
-  CheckCircleIcon,
 } from "@heroicons/react/24/solid";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useFavoriteKos } from "@/lib/useFavoriteKos";
-import dynamic from "next/dynamic";
-const FavoriteButton = dynamic(() => import("@/components/ui/FavoriteButton"), {
-  ssr: false,
-});
+import FavoriteButton from "@/components/ui/FavoriteButton";
+import TestimonialSlider from "@/components/TestimonialSlider";
 
 type Kos = {
   id: string;
@@ -32,36 +27,6 @@ type Kos = {
   type: string;
   images: string;
 };
-
-const testimonials = [
-  {
-    name: "Sarah Putri",
-    role: "Mahasiswa UI",
-    image:
-      "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face",
-    rating: 5,
-    comment:
-      "Kos yang sangat nyaman dan bersih! Lokasi strategis dekat kampus. Highly recommended!",
-  },
-  {
-    name: "Ahmad Rizki",
-    role: "Karyawan Swasta",
-    image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
-    rating: 5,
-    comment:
-      "Fasilitas lengkap dan pelayanan ramah. Proses booking mudah banget!",
-  },
-  {
-    name: "Dina Maharani",
-    role: "Fresh Graduate",
-    image:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
-    rating: 5,
-    comment:
-      "Harga terjangkau dengan kualitas terbaik. Gak nyesel pilih KosKu!",
-  },
-];
 
 const features = [
   {
@@ -300,49 +265,7 @@ export default function Dashboard() {
             Testimoni dari penghuni yang sudah merasakan kemudahan KosKu
           </p>
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {testimonials.map((t, idx) => (
-            <div key={idx} className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-[#4E342E] to-[#6D4C41] rounded-2xl blur opacity-20 group-hover:opacity-30 transition-all"></div>
-              <div className="relative bg-white rounded-2xl p-8 shadow-xl border border-amber-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                <div className="text-center">
-                  <div className="relative mb-6">
-                    <Image
-                      src={t.image}
-                      alt={t.name}
-                      width={64}
-                      height={64}
-                      className="w-16 h-16 rounded-full mx-auto object-cover border-4 border-white shadow-lg"
-                    />
-                    <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-gradient-to-r from-[#4E342E] to-[#6D4C41] rounded-full flex items-center justify-center">
-                      <CheckCircleIcon className="w-3 h-3 text-white" />
-                    </div>
-                  </div>
-                  <h3 className="font-bold text-lg mb-1 text-[#4E342E]">
-                    {t.name}
-                  </h3>
-                  <p className="text-[#4E342E] opacity-70 text-sm mb-3">
-                    {t.role}
-                  </p>
-                  <div className="flex justify-center gap-1 mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <StarIcon
-                        key={i}
-                        className={`w-5 h-5 ${
-                          i < t.rating ? "text-amber-500" : "text-gray-200"
-                        }`}
-                      />
-                    ))}
-                  </div>
-                  <p className="text-[#4E342E] opacity-80 text-center italic leading-relaxed">
-                    &ldquo;{t.comment}&rdquo;
-                  </p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+        <TestimonialSlider />
       </section>
 
       {/* Contact Section */}

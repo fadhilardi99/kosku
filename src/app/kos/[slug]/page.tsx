@@ -1,19 +1,24 @@
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { PrismaClient } from "@prisma/client";
 import { Star, Share2, Phone, MessageCircle, MapPin } from "lucide-react";
 import { notFound } from "next/navigation";
 import FasilitasList from "@/components/FasilitasList";
 import KosFavoriteClientButton from "@/app/kos/[slug]/KosFavoriteClientButton";
+import KosGalleryClient from "./KosGalleryClient";
 
 const prisma = new PrismaClient();
 
-export default async function KosDetail(props: { params: { slug: string } }) {
-  const params = await props.params;
+export default async function KosDetail({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  // params is now { slug: string }
   // Fetch kos data by slug
+  const { slug } = await params;
   const kos = await prisma.kos.findUnique({
-    where: { slug: params.slug },
+    where: { slug: slug },
   });
 
   if (!kos) return notFound();
@@ -107,34 +112,7 @@ export default async function KosDetail(props: { params: { slug: string } }) {
           {/* Gallery */}
           <div className="lg:col-span-2 group relative">
             <div className="absolute inset-0 bg-gradient-to-r from-[#4E342E] to-[#6D4C41] rounded-3xl blur opacity-10 group-hover:opacity-20 transition-all"></div>
-            <div className="relative bg-white rounded-3xl shadow-xl border border-amber-100 p-6">
-              <div className="relative w-full h-80 rounded-2xl overflow-hidden mb-4">
-                <Image
-                  src={images[0]}
-                  width={640}
-                  height={480}
-                  alt="Foto utama"
-                  className="object-cover w-full h-full"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                <span className="absolute top-4 right-4 bg-white/90 text-[#4E342E] text-sm px-3 py-1 rounded-full font-semibold">
-                  {images.length} Foto
-                </span>
-              </div>
-              <div className="grid grid-cols-4 gap-3">
-                {images.map((img: string, i: number) => (
-                  <div key={i} className="relative group cursor-pointer">
-                    <Image
-                      src={img}
-                      width={64}
-                      height={48}
-                      alt={`Foto ${i + 1}`}
-                      className="w-full h-20 object-cover rounded-xl border-2 border-amber-100 group-hover:border-[#4E342E] transition-all duration-300"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
+            <KosGalleryClient images={images} />
           </div>
 
           {/* Booking Card */}

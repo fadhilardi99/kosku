@@ -1,7 +1,6 @@
-import { PrismaClient, Prisma } from "@prisma/client";
+import { prisma } from "@/lib/prisma";
 import KosListClient from "@/app/kos/KosListClient";
-
-const prisma = new PrismaClient();
+import { Kos } from "@prisma/client";
 
 function getSearchParams(
   searchParams: Record<string, string | string[] | undefined>
@@ -18,14 +17,16 @@ function getSearchParams(
 
 const PAGE_SIZE = 9;
 
-export default async function KosListPage(props: {
-  searchParams: { [key: string]: string };
+export default async function KosListPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
-  const searchParams = props.searchParams;
-  const { search, type, page } = getSearchParams(searchParams);
+  const resolvedSearchParams = await searchParams;
+  const { search, type, page } = getSearchParams(resolvedSearchParams);
 
   // Build Prisma filter
-  const where: Prisma.KosWhereInput = {};
+  const where: Record<string, unknown> = {};
   if (search) {
     where.OR = [
       { name: { contains: search, mode: "insensitive" } },
@@ -37,11 +38,13 @@ export default async function KosListPage(props: {
   }
 
   // Get unique types for filter dropdown
-  const types = await prisma.kos.findMany({
+  const types = (await prisma.kos.findMany({
     select: { type: true },
     distinct: ["type"],
-  });
-  const typeOptions = Array.from(new Set(types.map((t) => t.type)));
+  })) as { type: string }[];
+  const typeOptions = Array.from(
+    new Set(types.map((t: { type: string }) => t.type))
+  );
 
   // Count total kos for pagination
   const totalKos = await prisma.kos.count({ where });
@@ -56,7 +59,13 @@ export default async function KosListPage(props: {
     take: PAGE_SIZE,
   });
 
-  const kosListForClient = kosList.map((kos) => ({
+  type KosClient = Omit<Kos, "price" | "originalPrice" | "reviews"> & {
+    price: number;
+    originalPrice: number | null;
+    reviews: number;
+  };
+
+  const kosListForClient: KosClient[] = kosList.map((kos) => ({
     ...kos,
     price: typeof kos.price === "bigint" ? Number(kos.price) : kos.price,
     originalPrice:

@@ -8,6 +8,7 @@ KosKu adalah platform pencarian dan pemesanan kos (boarding house) berbasis Next
 - **Detail Kos**: Lihat detail lengkap, fasilitas, peraturan, lokasi, dan galeri foto.
 - **Favorite**: Simpan kos favorit (localStorage, bisa dikembangkan ke backend/user).
 - **Dashboard**: Tampilkan kos populer, testimonial, fitur keunggulan, dan kontak.
+- **Testimoni Carousel**: Slider testimoni responsif, otomatis menyesuaikan jumlah kartu per tampilan (1 di mobile, 2 di tablet, 3 di desktop).
 - **Pencarian & Filter**: Search bar dan filter tipe kos.
 - **Pagination**: Navigasi halaman pada listing kos.
 - **Desain Minimalis**: UI sederhana, dominan warna coklat, tanpa kombinasi warna mencolok.
@@ -55,9 +56,24 @@ KosKu adalah platform pencarian dan pemesanan kos (boarding house) berbasis Next
 ## Struktur Project
 
 - `src/app/` - Halaman Next.js (dashboard, kos, detail, dsb)
-- `src/components/` - Komponen UI (Navbar, Footer, Card, dsb)
+- `src/components/` - Komponen UI (Navbar, Footer, Card, TestimonialSlider, dsb)
 - `src/lib/` - Helper dan utilitas
 - `prisma/` - Schema dan seed database
+
+## Fitur Testimoni Carousel
+
+- Komponen: `src/components/TestimonialSlider.tsx`
+- Slider testimoni responsif:
+  - 1 kartu per tampilan di mobile
+  - 2 kartu per tampilan di tablet
+  - 3 kartu per tampilan di desktop
+- Navigasi dengan tombol panah dan dot.
+- Tidak terjadi error hydration karena slider hanya dirender di client.
+
+### Cara Modifikasi Testimoni
+
+- Edit array `testimonials` di `TestimonialSlider.tsx` untuk menambah/mengubah testimoni.
+- Untuk mengubah tampilan, modifikasi Tailwind class di file yang sama.
 
 ## Catatan Desain
 
