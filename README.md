@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# KosKu - Platform Listing Kos Minimalis
 
-## Getting Started
+KosKu adalah platform pencarian dan pemesanan kos (boarding house) berbasis Next.js, dengan backend Prisma dan UI minimalis dominan warna coklat.
 
-First, run the development server:
+## Fitur Utama
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Listing Kos**: Cari dan filter kos berdasarkan nama, alamat, tipe, dan harga.
+- **Detail Kos**: Lihat detail lengkap, fasilitas, peraturan, lokasi, dan galeri foto.
+- **Favorite**: Simpan kos favorit (localStorage, bisa dikembangkan ke backend/user).
+- **Dashboard**: Tampilkan kos populer, testimonial, fitur keunggulan, dan kontak.
+- **Pencarian & Filter**: Search bar dan filter tipe kos.
+- **Pagination**: Navigasi halaman pada listing kos.
+- **Desain Minimalis**: UI sederhana, dominan warna coklat, tanpa kombinasi warna mencolok.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Frontend**: Next.js (App Router), React, Tailwind CSS
+- **Backend**: Next.js API Routes, Prisma ORM, SQLite/MySQL/Postgres
+- **Database**: Prisma + SQLite (default, bisa diganti)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Setup & Instalasi
 
-## Learn More
+1. **Clone repo & install dependencies**
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   git clone <repo-url>
+   cd kosku
+   npm install
+   # atau
+   yarn install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. **Konfigurasi Environment**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   - Copy `.env.example` ke `.env` dan sesuaikan jika perlu.
+   - Default: menggunakan SQLite (`DATABASE_URL="file:./dev.db"`)
 
-## Deploy on Vercel
+3. **Migrasi & Seed Database**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   ```bash
+   npx prisma migrate dev --name init
+   npx prisma db seed
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   - Edit/isi data seed di `prisma/seed.ts` atau file JSON terkait.
+
+4. **Jalankan Development Server**
+   ```bash
+   npm run dev
+   # atau
+   yarn dev
+   ```
+   Akses di [http://localhost:3000](http://localhost:3000)
+
+## Struktur Project
+
+- `src/app/` - Halaman Next.js (dashboard, kos, detail, dsb)
+- `src/components/` - Komponen UI (Navbar, Footer, Card, dsb)
+- `src/lib/` - Helper dan utilitas
+- `prisma/` - Schema dan seed database
+
+## Catatan Desain
+
+- UI minimalis, dominan warna coklat (`#4E342E`), tanpa kombinasi warna mencolok.
+- Ikon menggunakan Heroicons/Lucide atau emoji untuk kompatibilitas server component.
+- Favorit disimpan di localStorage (bisa diupgrade ke backend/user auth).
+
+## Pengembangan Lanjutan
+
+- Integrasi autentikasi user (NextAuth, dsb)
+- CRUD admin untuk kos
+- Favorite per user (persisten di database)
+- Booking & pembayaran
+
+---
+
+**KosKu** - Platform kos minimalis, nyaman, dan mudah digunakan.
